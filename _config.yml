@@ -1,0 +1,62 @@
+# GitHub Pages / Jekyll configuration
+# Replace placeholders in {curly braces} before publishing.
+
+title: "ISO/IEC 42001 Guide"
+description: "Practical, vendor-neutral guidance for implementing and certifying ISO/IEC 42001:2023 — the AI Management System standard. Russian and English."
+url: "https://{GITHUB_USER}.github.io"
+baseurl: "/{REPO_NAME}"
+
+# Author / organization
+author:
+  name: "{AUTHOR_NAME}"
+  url: "{SITE_URL}"
+
+# Theme — minimal, fast, GitHub-supported
+theme: jekyll-theme-cayman
+
+# SEO and discoverability
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Social
+twitter:
+  card: summary_large_image
+
+# Defaults for content pages
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
+  - scope:
+      path: "ru"
+    values:
+      lang: ru
+
+# Markdown engine
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Files to exclude from the site
+exclude:
+  - README.md
+  - LICENSE
+  - .github
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - node_modules
+
+# Permalinks
+permalink: pretty
+
+# Collections (optional, can be enabled later)
+# collections:
+#   industries:
+#     output: true
+#     permalink: /:collection/:name
