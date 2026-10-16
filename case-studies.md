@@ -19,6 +19,7 @@
 - [9. KPMG International (Schellman, December 2025)](#9-kpmg-international-schellman-december-2025)
 - [10. Augment Code (quantitative case)](#10-augment-code-quantitative-case)
 - [11. Common patterns of success](#11-common-patterns-of-success)
+- [12. Incident case: Denmark's CPR register and AI-written code (2026)](#12-incident-case-denmarks-cpr-register-and-ai-written-code-2026)
 
 ---
 
@@ -183,6 +184,32 @@ Integral Ad Science (February 2026) — initial cert + scope expansion at recert
 
 ### Certificate transparency
 All published a Trust Center or public certificate. Part of the marketing value.
+
+---
+
+## 12. Incident case: Denmark's CPR register and AI-written code (2026)
+
+Cases 1–10 show who got certified. This one is an incident, and an honest one: ISO/IEC 42001 would **not** have stopped this attack, because the AI was on the attacker's side. We include it for what it says about AI inside your own company. The investigation is still going, and details may change.
+
+**What happened.** From 10 September 2026 a bulk extraction ran through the legitimate access of a small IT contractor (Pays ApS) to Denmark's central population register. Names, addresses and personal ID numbers of about **8.8 million people** were obtained, with more than **14 million** query attempts over roughly ten days. The register itself was not hacked: every request was formally within the contractor's rights, there were just far too many. It was noticed on 2 October, not by a security system but by an unusually large bill for the queries.
+
+**The AI part.** According to the hacker (Politiken, via TV 2 Fyn), the program for the mass queries was written by AI, and two experts who saw the code agreed. The hacker says any model of the last year could have done it. Not confirmed by the authorities. The code had a mistake: it searched for people born in 1877 instead of 1977.
+
+**Why this matters for an AIMS.** If one person with an AI-written script can make 14 million queries, the same is possible from inside your company: an employee, a contractor, or an AI assistant already connected to client data (a chatbot, a CRM assistant, support automation). In practice that is a contractor with a key: fast, round the clock, and nobody asks who is responsible for it. This is the situation ISO/IEC 42001 is built for. Annex A asks you to:
+
+- assign a responsible owner for each AI system and define what it is intended for (A.3 internal organization, A.9 use of AI systems);
+- keep logs of what it does and monitor its behaviour in production, so a thousandfold growth in requests is seen by you, not by an invoice (A.6 AI system life cycle);
+- check suppliers of AI services that receive your data (A.10 third parties and customers);
+- set rules for how employees use AI, including external services (A.9).
+
+Details per control: [Annex A controls](./annex-a-controls.md). The information-security side of the same story (passwords, offboarding, supplier monitoring) is covered by ISO/IEC 27001. The two standards share one structure, so they are easy to build together: [Integrated management system](./integrated-management-system.md).
+
+Sources:
+
+- [TV 2 Fyn – artificial intelligence used in the leak](https://www.tv2fyn.dk/fyn/kunstig-intelligens-blev-brugt-i-omfattende-cpr-laek-e6a7e) (in Danish).
+- [DR/Ritzau – 1,039 companies receive stricter security requirements](https://www.dr.dk/nyheder/politik/1039-virksomheder-har-faaet-indskaerpet-sikkerhed-efter-cpr-laek) (in Danish).
+- [Copenhagen Post – "123456" password used in the CPR breach](https://cphpost.dk/2026-10-10/general/123456-password-used-in-massive-danish-cpr-data-breach/).
+- [CSIS – analysis of the CPR breach](https://www.csis.com/csis-tech-blog/the-hub/cpr-breach-denmark).
 
 ---
 
